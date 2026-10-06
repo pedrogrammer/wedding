@@ -1,0 +1,141 @@
+.invitation { width: 100%; max-width: 479px; margin-inline: auto; overflow: clip; }
+.scene { position: relative; width: 100%; }
+.canvas { position: relative; left: calc(50% - 160px); width: 320px; height: 100%; }
+.positioned, .artwork { position: absolute; z-index: 3; }
+.artwork { pointer-events: none; }
+.artwork img { transform-origin: center; }
+.script-title { width: 560px; left: -120px; height: 64px; font: 400 41px/64px GardenScript, cursive; color: #a67d2b; text-align: center; }
+.body-copy { font: 400 21px/26px GardenSerif, Georgia, serif; color: #6c513f; text-align: center; }
+.reveal { opacity: 0; transition: opacity var(--duration, 2s) ease var(--delay, 0s), transform var(--duration, 2s) ease var(--delay, 0s); }
+.reveal-rise { transform: translateY(40px); }
+.reveal-zoom { transform: scale(0.85); }
+.reveal-left { transform: translateX(40px); }
+.reveal-right { transform: translateX(-40px); }
+.reveal.is-visible { opacity: 1; transform: none; }
+.garden-hero { height: 1240px; margin-bottom: 15px; overflow: hidden; }
+.garden-film { position: absolute; z-index: 3; top: 0; left: -65px; width: 450px; height: 800px; object-fit: cover; display: block; }
+.garden-glow { position: absolute; z-index: 3; top: 0; left: -65px; width: 450px; height: 676px; opacity: 0.5; background: radial-gradient(circle at center, #fff9eb 0%, #ffe7c000 85%); }
+.couple-names h1 { font: 400 80px/56px GardenNames, cursive; color: #a67d2b; text-align: center; }
+.couple-names, .wedding-day, .wedding-date, .couple-amp { transform: translateY(30px); }
+.wedding-day, .wedding-date { display: flex; align-items: center; justify-content: center; text-align: center; color: #a67d2b; }
+.wedding-day { font: 400 40px/20px GardenScript, cursive; }
+.wedding-date { font: 400 25px/13px GardenNumbers, Georgia, serif; }
+.couple-amp { color: #a07b33; font: 400 40px/44px GardenScript, cursive; text-align: center; }
+.hero-blessing { font: 400 41px/43px GardenScript, cursive; text-align: center; color: #a67d2b; }
+.hero-welcome { color: #6a5140; }
+.scroll-prompt { height: 56px; text-align: center; text-decoration: none; color: #a67d2b; font: 400 32px/35px GardenScript, cursive; }
+.chevron { display: block; width: 25px; height: 16px; color: #937100; }
+.scroll-prompt .chevron { margin: 5px auto 0; animation: chevron-bob 1.1s linear infinite; }
+.welcome-anchor { position: absolute; top: 800px; }
+@keyframes chevron-bob { 0%, 100% { transform: translateY(0); } 55% { transform: translateY(5px); } }
+.motion-sway-left { --sway-scale: 1.06; --sway-rotation: 2deg; animation: floral-sway 4s linear infinite; }
+.motion-sway-right { --sway-scale: 1.04; --sway-rotation: -2deg; animation: floral-sway 4s linear infinite; }
+.motion-sway-subtle { --sway-scale: 1.02; --sway-rotation: 1deg; animation: floral-sway 4s linear infinite; }
+.motion-sway-dress-right { animation: dress-right-sway 8s linear infinite; }
+.motion-sway-wide { animation: dress-left-sway 6s linear infinite; }
+@keyframes floral-sway { 0%, 100% { transform: scale(1) rotate(0); } 50% { transform: scale(var(--sway-scale)) rotate(var(--sway-rotation)); } }
+@keyframes dress-right-sway { 0%, 50%, 100% { transform: scale(1) rotate(0); } 25% { transform: scale(1.02) rotate(1deg); } 75% { transform: scale(0.98) rotate(-1deg); } }
+@keyframes dress-left-sway { 0%, 100% { transform: scale(1) rotate(0); } 25% { transform: scale(1.04) rotate(1deg); } 50% { transform: scale(0.98) rotate(0); } 75% { transform: scale(0.98) rotate(-2deg); } }
+.countdown-scene { height: 247px; margin-bottom: 15px; }
+.countdown-title { position: absolute; top: 29px; left: calc(50% - 280px); }
+.countdown { position: absolute; top: 104px; left: calc(50% - 235px); width: 470px; display: flex; justify-content: center; align-items: center; gap: 6px; font-family: GardenNumbers, Georgia, serif; }
+.countdown-unit { text-align: center; }
+.number-window { display: flex; align-items: center; justify-content: center; height: 56px; overflow: hidden; }
+.countdown-digit { display: block; white-space: nowrap; font-size: 45px; line-height: 1.2; background: linear-gradient(105deg, #b48c3d 0%, #b48c3d 25%, #cda95a 46%, #d8ba72 52%, #cda95a 58%, #b48c3d 75%, #b48c3d 100%); background-size: 300% 100%; background-clip: text; -webkit-background-clip: text; color: transparent; clip-path: inset(0 100% 0 0); transition: transform 0.55s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.55s ease; }
+.countdown-revealed .countdown-digit { animation: ink-reveal 1.1s cubic-bezier(0.4, 0, 0.2, 1) forwards, candle-shimmer 4.5s ease-in-out 1.1s infinite; }
+.unit-1 .countdown-digit { animation-delay: 0.18s, 1.28s; }
+.unit-2 .countdown-digit { animation-delay: 0.36s, 1.46s; }
+.unit-3 .countdown-digit { animation-delay: 0.54s, 1.64s; }
+.countdown-digit.digit-out { transform: translateY(-60%); opacity: 0; }
+.countdown-label { display: block; font-size: 19px; margin-top: 8px; color: #b48c3d; opacity: 0; transition: opacity 0.8s ease 0.9s; }
+.countdown-revealed .countdown-label { opacity: 0.85; }
+.unit-1 .countdown-label { transition-delay: 1.08s; }
+.unit-2 .countdown-label { transition-delay: 1.26s; }
+.unit-3 .countdown-label { transition-delay: 1.44s; }
+.countdown-separator { font-size: 52px; margin-top: -40px; color: #b48c3d; line-height: 1; opacity: 0; transition: opacity 0.6s ease 0.25s; }
+.countdown-revealed .countdown-separator { opacity: 0.9; }
+.separator-2 { transition-delay: 0.43s; }
+.separator-3 { transition-delay: 0.61s; }
+@keyframes ink-reveal { to { clip-path: inset(0); } }
+@keyframes candle-shimmer { 0%, 100% { background-position: 100% 0; } 50% { background-position: 0% 0; } }
+.schedule-scene { height: 570px; margin-bottom: 30px; }
+.schedule-scene .script-title { color: #b48c3d; }
+.event-list { list-style: none; }
+.event-name { font: 400 20px/22px GardenSerif, Georgia, serif; color: #6c513f; text-align: center; }
+.event-time { font: 400 30px/47px GardenNumbers, Georgia, serif; color: #846f61; text-align: center; }
+.timeline-line { opacity: 0.7; }
+.timeline-dot { width: 8px; height: 8px; border-radius: 50%; background: #8c7666; }
+.schedule-rose { top: 140px; left: 132px; width: 55px; pointer-events: none; }
+.schedule-rose img { width: 100%; transform: translate3d(0, var(--rose-offset, 0px), 0) rotate(-35deg); will-change: transform; }
+.location-scene { height: 428px; margin-bottom: 30px; }
+.location-name { font-size: 20px; line-height: 31px; }
+.location-address { font-size: 17px; line-height: 21px; }
+.petal-falling img { animation: var(--petal-animation) var(--petal-duration) linear forwards; }
+@keyframes petal-fall { to { transform: translate(var(--petal-x), var(--petal-y)) rotate(var(--petal-rotate)); opacity: 0; } }
+@keyframes petal-1 { 37.5% { transform: translate(27px, 163px) rotate(-6deg); opacity: 1; } 75% { transform: translate(60px, 341px) rotate(-7deg); opacity: 0.8; } 100% { transform: translate(77px, 381px) rotate(2deg); opacity: 0; } }
+@keyframes petal-2 { 37.5% { transform: translate(-39px, 163px) rotate(-6deg); opacity: 1; } 75% { transform: translate(-69px, 341px) rotate(2deg); opacity: 0.8; } 100% { transform: translate(-77px, 381px) rotate(2deg); opacity: 0; } }
+@keyframes petal-3 { 33.333% { transform: translate(29px, 73px) rotate(-6deg); opacity: 1; } 77.777% { transform: translate(57px, 204px) rotate(-6deg); opacity: 1; } 100% { transform: translate(67px, 224px) rotate(-6deg); opacity: 0; } }
+@keyframes petal-4 { 37.5% { transform: translate(-39px, 133px) rotate(-6deg); opacity: 1; } 75% { transform: translate(-69px, 221px) rotate(2deg); opacity: 1; } 100% { transform: translate(-99px, 251px) rotate(2deg); opacity: 0; } }
+.map-scene { height: 343px; margin-bottom: 60px; }
+.map-frame { opacity: 0.8; }
+.venue-map { position: absolute; z-index: 3; top: 5px; left: -7.5px; width: 335px; height: 335px; border-radius: 15px; overflow: hidden; background: #eff0ef; font-family: Arial, sans-serif; }
+.map-image-window { position: absolute; inset: 0; overflow: hidden; }
+.map-image-window img { width: 335px; height: 335px; user-select: none; transform-origin: center; }
+.open-map { position: absolute; top: 8px; left: 8px; color: #1a73e8; background: white; text-decoration: none; padding: 8px 10px; font-size: 14px; font-weight: 600; box-shadow: 0 1px 4px #0003; }
+.map-controls { position: absolute; bottom: 24px; right: 10px; display: flex; flex-direction: column; gap: 5px; }
+.map-controls button { border: 0; background: #fff; color: #666; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; box-shadow: 0 2px 6px #0003; font: 400 28px Arial, sans-serif; }
+.map-controls svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+.guest-details-scene { height: 491px; }
+.attendance-scene { height: 438px; }
+.rsvp-seal { border: 0; padding: 0; background: transparent; width: 100%; }
+.attendance-chevron { top: 368px; left: 147px; animation: chevron-bob 1.1s linear infinite; }
+.click-to-open { top: 387px; left: 48px; width: 224px; height: 50px; font: 400 32px/50px GardenScript, cursive; color: #a67d2b; border: 0; padding: 0; background: transparent; text-align: center; animation: chevron-bob 1.1s linear infinite; }
+.invitation-footer { height: 673px; overflow: hidden; }
+.footer-gradient { top: 0; left: -65px; width: 451px; height: 237px; background: linear-gradient(0deg, #e8ddcf00 0%, #f9f0e0 100%); }
+.footer-names { font-size: 28px; line-height: 45px; color: #a67d2b; }
+.envelope, .opening-film { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f9f0e0; }
+.envelope { z-index: 100; width: 100%; height: 100%; border: 0; padding: 0; user-select: none; transition: opacity 1.4s ease; }
+.envelope img, .opening-film video { display: block; width: 100%; max-width: 440px; height: auto; object-fit: contain; }
+.envelope-opening { opacity: 0; pointer-events: none; }
+.envelope-prompt { position: absolute; bottom: 30%; left: 50%; display: flex; flex-direction: column; align-items: center; gap: 7px; transform: translateX(-50%); animation: tap-in 1.2s 0.8s both; }
+.envelope-prompt > span:last-child { font: 400 11px GardenSeal, Georgia, serif; letter-spacing: 0.26em; text-transform: uppercase; color: #8c643cbf; white-space: nowrap; animation: tap-pulse 2.4s 1.6s ease-in-out infinite; }
+.envelope-chevron { width: 10px; height: 10px; border-right: 1.5px solid #8c643c99; border-top: 1.5px solid #8c643c99; transform: rotate(-45deg); animation: envelope-bob 2.4s 1.9s ease-in-out infinite; }
+@keyframes tap-in { from { opacity: 0; transform: translate(-50%, 6px); } to { opacity: 1; transform: translate(-50%, 0); } }
+@keyframes tap-pulse { 0%, 100% { opacity: 0.45; letter-spacing: 0.26em; } 50% { opacity: 1; letter-spacing: 0.30em; } }
+@keyframes envelope-bob { 0%, 100% { transform: rotate(-45deg); opacity: 0.6; } 50% { transform: rotate(-45deg) translate(2px, -2px); opacity: 1; } }
+.opening-film { z-index: 101; pointer-events: none; opacity: 0; transition: opacity 0.8s ease; }
+.film-playing { opacity: 1; pointer-events: auto; }
+.film-fading { opacity: 0; transition-duration: 1.4s; }
+.music-toggle { position: fixed; z-index: 200; bottom: 20px; right: max(20px, calc((100vw - 479px) / 2 + 20px)); width: 60px; height: 60px; border: 0; padding: 0; border-radius: 50%; background: #5a0f1b; display: grid; place-items: center; box-shadow: 0 4px 6px #0000001a; animation: music-in 0.3s ease; }
+.music-toggle svg { width: 30px; height: 30px; fill: white; }
+@keyframes music-in { from { opacity: 0; } to { opacity: 1; } }
+.rsvp-dialog { position: fixed; inset: 0; z-index: 150; width: 100%; max-width: 479px; height: 100%; max-height: 100%; margin: 0 auto; padding: 0; border: 0; overflow-y: auto; background: #fffaf8; color: #000; font-family: 'Times New Roman', serif; }
+.rsvp-dialog::backdrop { background: #0009; }
+.dialog-close-bar { position: sticky; z-index: 2; top: 0; left: 0; width: 100%; height: 50px; background: #000; display: flex; align-items: center; justify-content: flex-end; }
+.dialog-close-bar button { width: 36px; height: 36px; margin-right: 4px; border: 0; background: transparent; position: relative; }
+.dialog-close-bar button::before, .dialog-close-bar button::after { content: ''; position: absolute; top: 17px; left: 8px; width: 20px; height: 1.5px; background: white; transform: rotate(45deg); }
+.dialog-close-bar button::after { transform: rotate(-45deg); }
+.rsvp-form-card { padding: 20px; }
+.rsvp-form-card h2 { font-size: 22px; font-weight: 400; line-height: 1.23; text-align: center; color: #4f4f4f; margin-bottom: 6px; }
+.rsvp-deadline { font-size: 18px; line-height: 26.1px; text-align: center; margin-bottom: 14px; }
+.form-field { display: block; width: 100%; font-size: 18px; line-height: 26.1px; margin-bottom: 25px; }
+.form-field input { display: block; width: 100%; height: 50px; padding: 0 14px; border: 1px solid #c9c9c9; border-radius: 5px; background: transparent; color: #4f4f4f; font-family: 'Times New Roman', serif; font-size: 16px; margin-top: 5px; }
+.rsvp-form-card fieldset { padding: 0; margin: 0 0 15px; border: 0; min-width: 0; }
+.rsvp-form-card legend { font-size: 18px; line-height: 26.1px; padding: 0 0 5px; }
+.radio-option { display: flex; align-items: center; gap: 10px; height: 20px; font: 400 14px/16.8px GardenSans, Arial, sans-serif; margin-bottom: 10px; cursor: pointer; }
+.radio-option:first-of-type { margin-top: 5px; }
+.radio-option input { appearance: none; width: 20px; height: 20px; margin: 0; border: 2px solid #0008; border-radius: 50%; display: grid; place-items: center; }
+.radio-option input:checked::after { content: ''; width: 10px; height: 10px; border-radius: 50%; background: #5a0f1b; }
+.field-hint { display: block; font: 400 14px/21.7px GardenSans, Arial, sans-serif; opacity: 0.7; padding-top: 5px; padding-bottom: 15px; }
+.field-hint + input { margin-top: 0; }
+.rsvp-submit { position: relative; overflow: hidden; width: 100%; height: 50px; border: 0; border-radius: 20px; background: #5a0f1b; color: #f6f1e8; font: 400 20px 'Times New Roman', serif; margin-top: 0; }
+.button-shine { position: absolute; left: 30px; top: 0; height: 100%; width: 45px; background: linear-gradient(90deg, #ffffff1a, #ffffff66); transform: translateX(-85px) skewX(-45deg); animation: button-shine 3s linear infinite; }
+@keyframes button-shine { 30%, 100% { transform: translateX(450px) skewX(-45deg); } }
+.rsvp-message { margin-top: 25px; padding: 20px; background: #f2efda; font: 400 19px/1.5 GardenSerif, Georgia, serif; text-align: center; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .artwork img, .chevron, .click-to-open, .envelope-chevron, .envelope-prompt > span:last-child { animation: none; }
+  .countdown-digit { clip-path: none; }
+  .schedule-rose img { transform: rotate(-35deg); will-change: auto; }
+}

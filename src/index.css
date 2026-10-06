@@ -1,0 +1,54 @@
+@font-face {
+  font-family: GardenScript;
+  src: url('./assets/fonts/ImperialScript-Regul.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: GardenNames;
+  src: url('./assets/fonts/BeauRivage-Regular.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: GardenSerif;
+  src: url('./assets/fonts/GT_Super_Display_Lig.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: GardenNumbers;
+  src: url('./assets/fonts/Ovo-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: GardenSans;
+  src: url('./assets/fonts/SourceSans3-Regular.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: GardenSeal;
+  src: url('./assets/fonts/Cinzel-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+:root {
+  font-family: GardenSerif, Georgia, serif;
+  color: #6c513f;
+  background: #f9f0e0;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; overflow-x: clip; }
+h1, h2, p, ol { margin: 0; padding: 0; }
+button, input { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
+img { display: block; width: 100%; height: auto; }
+a { color: inherit; }
+button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid #a67d2b; outline-offset: 4px; }
