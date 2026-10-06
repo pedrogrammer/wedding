@@ -162,7 +162,7 @@
         "container": "grid",
         "axisx": "left",
         "axisy": "top",
-        "text": "Zohan Rose",
+        "text": "Pedram Asal",
         "styles": [
           "vertical-align:middle;color:#a67d2b;font-size:80px;font-family:var(--t-text-font,Arial);line-height:0.7;font-weight:800;background-position:center center;border-width:var(--t396-borderwidth,0);border-style:var(--t396-borderstyle,solid);border-color:var(--t396-bordercolor,transparent);transition:background-color var(--t396-speedhover,0s) ease-in-out,color var(--t396-speedhover,0s) ease-in-out,border-color var(--t396-speedhover,0s) ease-in-out,box-shadow var(--t396-shadowshoverspeed,0.2s) ease-in-out;--t396-shadow-text-opacity:100%;text-shadow:var(--t396-shadow-text-x,0px) var(--t396-shadow-text-y,0px) var(--t396-shadow-text-blur,0px) rgba(var(--t396-shadow-text-color),var(--t396-shadow-text-opacity,100%));",
           "white-space:normal;background-size:cover;",
@@ -254,7 +254,7 @@
         "container": "grid",
         "axisx": "left",
         "axisy": "top",
-        "text": "27.09.26",
+        "text": "1405/8/7",
         "styles": [
           "vertical-align:middle;color:#a67d2b;font-size:25px;font-family:'NewFonts',Arial,sans-serif;line-height:0.5;font-weight:600;background-position:center center;border-width:var(--t396-borderwidth,0);border-style:var(--t396-borderstyle,solid);border-color:var(--t396-bordercolor,transparent);transition:background-color var(--t396-speedhover,0s) ease-in-out,color var(--t396-speedhover,0s) ease-in-out,border-color var(--t396-speedhover,0s) ease-in-out,box-shadow var(--t396-shadowshoverspeed,0.2s) ease-in-out;--t396-shadow-text-opacity:100%;text-shadow:var(--t396-shadow-text-x,0px) var(--t396-shadow-text-y,0px) var(--t396-shadow-text-blur,0px) rgba(var(--t396-shadow-text-color),var(--t396-shadow-text-opacity,100%));",
           "white-space:normal;background-size:cover;",
@@ -3574,7 +3574,7 @@
         "container": "grid",
         "axisx": "left",
         "axisy": "top",
-        "text": "Zohan and Rose",
+        "text": "Pedram and Asal",
         "styles": [
           "vertical-align:middle;color:#a67d2b;font-size:28px;font-family:'NewFonts',Arial,sans-serif;line-height:1.59;font-weight:100;background-position:center center;border-width:var(--t396-borderwidth,0);border-style:var(--t396-borderstyle,solid);border-color:var(--t396-bordercolor,transparent);transition:background-color var(--t396-speedhover,0s) ease-in-out,color var(--t396-speedhover,0s) ease-in-out,border-color var(--t396-speedhover,0s) ease-in-out,box-shadow var(--t396-shadowshoverspeed,0.2s) ease-in-out;--t396-shadow-text-opacity:100%;text-shadow:var(--t396-shadow-text-x,0px) var(--t396-shadow-text-y,0px) var(--t396-shadow-text-blur,0px) rgba(var(--t396-shadow-text-color),var(--t396-shadow-text-opacity,100%));",
           "white-space:normal;background-size:cover;",

@@ -1,4 +1,4 @@
-# The Sacred Garden — mobile invitation
+# مراسم پدرام و عسل — mobile invitation
 
 An independent React and TypeScript implementation of the mobile design at https://webgencyinvitations.com/thesacredgarden.
 
@@ -24,7 +24,7 @@ The application renders semantic React components directly into the page. It has
 - `src/App.css` and `src/index.css`: authored mobile layout, typography, and animations.
 - `public/assets/`: original images, original video/audio, and a captured map view. The map artwork is static; directions open the live Google map. Zooming and panning are implemented locally.
 
-All six fonts are stored in `src/assets/fonts/` and loaded locally through `src/index.css`. Vite includes them in the production bundle with hashed filenames. Images, video, audio, and map artwork also load locally; rendering the invitation requires no external asset providers. `.reference/download-fonts.mjs` records the original font URLs and can re-download and validate the files when needed. Visual layer coordinates, text, and spacing follow the reference's mobile layout. Screens wider than 479 px display the same centered mobile invitation.
+The invitation fonts are stored in `src/assets/fonts/` and loaded locally through `src/index.css`. The Persian welcome section uses Shekasteh for «به نام آفریننده عشق» and Noto Naskh Arabic for the translated invitation text. `Shekasteh-source.md` records the calligraphy font's source and version; the Noto font's Open Font License is included beside its font file. Vite includes the active fonts in the production bundle with hashed filenames. Images, video, audio, and map artwork also load locally; rendering the invitation requires no external asset providers. `.reference/download-fonts.mjs` records the original six font URLs and can re-download and validate those files when needed. Visual layer coordinates, text, and spacing follow the reference's mobile layout, with the Persian welcome section flowing naturally to fit its text. Screens wider than 479 px display the same centered mobile invitation.
 
 ## RSVP and sample data
 

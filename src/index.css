@@ -34,6 +34,18 @@
   font-weight: 400;
   font-display: swap;
 }
+@font-face {
+  font-family: GardenShekasteh;
+  src: url('./assets/fonts/Shekasteh.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: GardenPersian;
+  src: url('./assets/fonts/NotoNaskhArabic.ttf') format('truetype');
+  font-weight: 400 700;
+  font-display: swap;
+}
 :root {
   font-family: GardenSerif, Georgia, serif;
   color: #6c513f;
