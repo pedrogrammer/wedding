@@ -46,6 +46,13 @@
   font-weight: 400 700;
   font-display: swap;
 }
+@font-face {
+  font-family: 'B Nazanin';
+  src: url('./assets/fonts/BNazanin.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   font-family: GardenSerif, Georgia, serif;
   color: #6c513f;

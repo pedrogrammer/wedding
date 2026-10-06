@@ -26,7 +26,7 @@ function GardenHero() {
         <Artwork
           name="hero-paper.webp"
           width={744}
-          height={477}
+          className="hero-message-paper"
           left={-212}
           top={763}
         />
@@ -89,21 +89,18 @@ function GardenHero() {
           </Reveal>
           <Reveal className="hero-blessing" effect="fade" duration={1}>
             <p>
-              دو جان
-              <br />
-              یک سرنوشت
-              <br />
-              <span className="hero-blessing-lifetime">
-                عمری که خداوند برایمان رقم زده است
+              <span className="hero-blessing-line">به شوق آغاز یک زندگی،</span>
+              <span className="hero-blessing-line hero-blessing-invitation">
+                شما را به جشن پیوندمان دعوت می‌کنیم.
               </span>
             </p>
           </Reveal>
           <Reveal className="hero-welcome" effect="fade" delay={0.2}>
             <p>
-              دوستان و خانواده‌ی عزیز،
-              <br />
-              در شبی سرشار از عشق، شادی و دعا کنار ما باشید تا خاطراتی
-              فراموش‌نشدنی بسازیم و آغاز زندگی مشترکمان را جشن بگیریم.
+              تصویر عشق تنها نمای ماندگار ذهن ماست.
+              ما عشق را برای هم نقاشی کردیم به رنگ آب زلال.
+              اما جشن زندگی را رنگین می‌خواهیم. حضور شما،
+              این قاب عاشقانه را زیباتر خواهد کرد.
             </p>
           </Reveal>
         </div>
