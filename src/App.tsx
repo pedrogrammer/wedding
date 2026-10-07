@@ -369,10 +369,10 @@ function InvitationFooter() {
   return (
     <footer className="scene invitation-footer" lang="fa">
       <div className="canvas">
-        <Artwork name="footer-couple.jpg" width={450} left={-65} top={60} />
-        <div className="footer-gradient positioned" aria-hidden="true" />
+        <Artwork name="footer-couple.jpg" className="footer-photo" width={450} left={-65} top={60} />
         <Artwork
           name="dress-flowers-right.webp"
+          className="footer-top-flowers"
           width={276}
           left={155}
           top={0}
