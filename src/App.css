@@ -44,7 +44,7 @@
 @keyframes dress-right-sway { 0%, 50%, 100% { transform: scale(1) rotate(0); } 25% { transform: scale(1.02) rotate(1deg); } 75% { transform: scale(0.98) rotate(-1deg); } }
 @keyframes dress-left-sway { 0%, 100% { transform: scale(1) rotate(0); } 25% { transform: scale(1.04) rotate(1deg); } 50% { transform: scale(0.98) rotate(0); } 75% { transform: scale(0.98) rotate(-2deg); } }
 .countdown-scene { height: 247px; margin-bottom: 15px; }
-.countdown-title { position: absolute; top: 29px; left: calc(50% - 280px); }
+.countdown-title { position: absolute; top: 29px; left: 0; width: 100%; font: 400 34px/64px GardenShekasteh, GardenPersian, serif; }
 .countdown { position: absolute; top: 104px; left: calc(50% - 235px); width: 470px; display: flex; justify-content: center; align-items: center; gap: 6px; font-family: GardenNumbers, Georgia, serif; }
 .countdown-unit { text-align: center; }
 .number-window { display: flex; align-items: center; justify-content: center; height: 56px; overflow: hidden; }
@@ -54,7 +54,7 @@
 .unit-2 .countdown-digit { animation-delay: 0.36s, 1.46s; }
 .unit-3 .countdown-digit { animation-delay: 0.54s, 1.64s; }
 .countdown-digit.digit-out { transform: translateY(-60%); opacity: 0; }
-.countdown-label { display: block; font-size: 19px; margin-top: 8px; color: #b48c3d; opacity: 0; transition: opacity 0.8s ease 0.9s; }
+.countdown-label { width: 70px; display: block; font: 400 22px/23px 'B Nazanin', GardenPersian, serif; margin-top: 8px; color: #b48c3d; opacity: 0; transition: opacity 0.8s ease 0.9s; }
 .countdown-revealed .countdown-label { opacity: 0.85; }
 .unit-1 .countdown-label { transition-delay: 1.08s; }
 .unit-2 .countdown-label { transition-delay: 1.26s; }
@@ -67,8 +67,9 @@
 @keyframes candle-shimmer { 0%, 100% { background-position: 100% 0; } 50% { background-position: 0% 0; } }
 .schedule-scene { height: 570px; margin-bottom: 30px; }
 .schedule-scene .script-title { color: #b48c3d; }
+.schedule-scene .schedule-title { font: 400 38px/64px GardenShekasteh, GardenPersian, serif; }
 .event-list { list-style: none; }
-.event-name { font: 400 20px/22px GardenSerif, Georgia, serif; color: #6c513f; text-align: center; }
+.event-name { font: 400 24px/40px 'B Nazanin', GardenPersian, serif; color: #6c513f; text-align: center; }
 .event-time { font: 400 30px/47px GardenNumbers, Georgia, serif; color: #846f61; text-align: center; }
 .timeline-line { opacity: 0.7; }
 .timeline-dot { width: 8px; height: 8px; border-radius: 50%; background: #8c7666; }

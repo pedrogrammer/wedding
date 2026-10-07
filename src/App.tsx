@@ -120,49 +120,40 @@ function GardenHero() {
 
 const events = [
   {
-    time: "5 PM",
-    name: "Guest Arrival",
+    time: "4 PM",
+    name: "عقد آریایی",
     timeTop: 141,
-    nameTop: 143,
+    nameTop: 145,
     dotTop: 161,
-    left: 205,
-    width: 94,
+    left: 188,
+    width: 128,
+  },
+  {
+    time: "5 PM",
+    name: "پذیرایی",
+    timeTop: 246,
+    nameTop: 250,
+    dotTop: 266,
+    left: 188,
+    width: 128,
   },
   {
     time: "6 PM",
-    name: "Nikkah Ceremony",
-    timeTop: 224,
-    nameTop: 215,
-    dotTop: 243,
-    left: 206,
-    width: 91,
-  },
-  {
-    time: "7 PM",
-    name: "Mocktail Hour",
-    timeTop: 300,
-    nameTop: 302,
-    dotTop: 320,
-    left: 206,
-    width: 91,
-  },
-  {
-    time: "8 PM",
-    name: "Dinner",
-    timeTop: 377,
-    nameTop: 390,
-    dotTop: 397,
-    left: 221,
-    width: 61,
+    name: "رقص",
+    timeTop: 350,
+    nameTop: 354,
+    dotTop: 370,
+    left: 188,
+    width: 128,
   },
   {
     time: "9 PM",
-    name: "Dance",
+    name: "شام",
     timeTop: 455,
-    nameTop: 468,
+    nameTop: 459,
     dotTop: 475,
-    left: 221,
-    width: 61,
+    left: 188,
+    width: 128,
   },
 ];
 
@@ -171,6 +162,7 @@ function Schedule() {
     <section
       className="scene schedule-scene"
       aria-labelledby="schedule-heading"
+      lang="fa"
     >
       <div className="canvas">
         <Artwork
@@ -189,10 +181,11 @@ function Schedule() {
         />
         <h2
           id="schedule-heading"
-          className="script-title positioned"
+          className="script-title schedule-title positioned"
           style={{ top: 45 }}
+          dir="rtl"
         >
-          Schedule of Events
+          برنامهٔ مراسم
         </h2>
         <ol className="event-list">
           {events.map((event, index) => (
@@ -221,7 +214,7 @@ function Schedule() {
                 duration={1.5}
                 delay={index * 0.1}
               >
-                <span>{event.name}</span>
+                <span dir="rtl">{event.name}</span>
               </Reveal>
             </li>
           ))}
