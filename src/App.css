@@ -90,12 +90,8 @@
 .map-scene { height: 343px; margin-bottom: 60px; }
 .map-frame { opacity: 0.8; }
 .venue-map { position: absolute; z-index: 3; top: 5px; left: -7.5px; width: 335px; height: 335px; border-radius: 15px; overflow: hidden; background: #eff0ef; font-family: Arial, sans-serif; }
-.map-image-window { position: absolute; inset: 0; overflow: hidden; }
-.map-image-window img { width: 335px; height: 335px; user-select: none; transform-origin: center; }
-.open-map { position: absolute; top: 8px; left: 8px; color: #1a73e8; background: white; text-decoration: none; padding: 8px 10px; font-size: 14px; font-weight: 600; box-shadow: 0 1px 4px #0003; }
-.map-controls { position: absolute; bottom: 24px; right: 10px; display: flex; flex-direction: column; gap: 5px; }
-.map-controls button { border: 0; background: #fff; color: #666; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; box-shadow: 0 2px 6px #0003; font: 400 28px Arial, sans-serif; }
-.map-controls svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+.neshan-map { display: block; width: 100%; height: 100%; border: 0; }
+.open-map { position: absolute; top: 8px; left: 8px; color: #1976d2; background: white; text-decoration: none; padding: 8px 10px; font: 600 14px/1.5 GardenPersian, Arial, sans-serif; border-radius: 3px; box-shadow: 0 1px 4px #0003; }
 .guest-details-scene { height: 491px; }
 .attendance-scene { height: 438px; }
 .rsvp-seal { border: 0; padding: 0; background: transparent; width: 100%; }

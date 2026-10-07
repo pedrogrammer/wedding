@@ -13,18 +13,18 @@ npm run preview
 
 ## Implementation
 
-The application renders semantic React components directly into the page. It has no iframe, HTML injection, copied page document, or Tilda runtime dependency.
+The application renders semantic React components directly into the page. The venue map uses Neshan's official map iframe; the invitation has no HTML injection, copied page document, or Tilda runtime dependency.
 
 - `src/App.tsx`: hero, schedule, location, guest details, attendance, and footer sections.
 - `src/components/InvitationIntro.tsx`: envelope state, original opening video, audio playback, and fallback handling.
 - `src/components/Countdown.tsx`: timer, animated digits, and viewport reveal.
 - `src/components/Artwork.tsx`: decorative layers and scroll reveal observers.
-- `src/components/VenueMap.tsx`: native map artwork, pointer panning, zoom controls, and directions link.
+- `src/components/VenueMap.tsx`: live Neshan map of باغ تالار تهران and the supplied Neshan directions link.
 - `src/components/RsvpDialog.tsx`: native dialog, keyboard/focus behavior, form validation, and local response storage.
 - `src/App.css` and `src/index.css`: authored mobile layout, typography, and animations.
-- `public/assets/`: original images, original video/audio, and a captured map view. The map artwork is static; directions open the live Google map. Zooming and panning are implemented locally.
+- `public/assets/`: original images and original video/audio. The venue map is embedded from Neshan, with interactive map controls and a link to `https://nshn.ir/57_bvkqu2xdlzK`.
 
-The invitation fonts are stored in `src/assets/fonts/` and loaded locally through `src/index.css`. The Persian welcome section uses Shekasteh for «به نام آفریننده عشق» and Noto Naskh Arabic for the translated invitation text. `Shekasteh-source.md` records the calligraphy font's source and version; the Noto font's Open Font License is included beside its font file. Vite includes the active fonts in the production bundle with hashed filenames. Images, video, audio, and map artwork also load locally; rendering the invitation requires no external asset providers. `.reference/download-fonts.mjs` records the original six font URLs and can re-download and validate those files when needed. Visual layer coordinates, text, and spacing follow the reference's mobile layout, with the Persian welcome section flowing naturally to fit its text. Screens wider than 479 px display the same centered mobile invitation.
+The invitation fonts are stored in `src/assets/fonts/` and loaded locally through `src/index.css`. The Persian welcome section uses Shekasteh for «به نام آفریننده عشق» and Noto Naskh Arabic for the translated invitation text. `Shekasteh-source.md` records the calligraphy font's source and version; the Noto font's Open Font License is included beside its font file. Vite includes the active fonts in the production bundle with hashed filenames. Images, video, and audio load locally; the live venue map requires access to Neshan. `.reference/download-fonts.mjs` records the original six font URLs and can re-download and validate those files when needed. Visual layer coordinates, text, and spacing follow the reference's mobile layout, with the Persian welcome section flowing naturally to fit its text. Screens wider than 479 px display the same centered mobile invitation.
 
 ## RSVP and sample data
 
