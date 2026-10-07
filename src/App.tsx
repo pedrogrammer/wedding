@@ -97,9 +97,8 @@ function GardenHero() {
           </Reveal>
           <Reveal className="hero-welcome" effect="fade" delay={0.2}>
             <p>
-              تصویر عشق تنها نمای ماندگار ذهن ماست.
-              ما عشق را برای هم نقاشی کردیم به رنگ آب زلال.
-              اما جشن زندگی را رنگین می‌خواهیم. حضور شما،
+              تصویر عشق تنها نمای ماندگار ذهن ماست. ما عشق را برای هم نقاشی
+              کردیم به رنگ آب زلال. اما جشن زندگی را رنگین می‌خواهیم. حضور شما،
               این قاب عاشقانه را زیباتر خواهد کرد.
             </p>
           </Reveal>
@@ -275,25 +274,29 @@ function Location() {
     <section
       className="scene location-scene"
       aria-labelledby="location-heading"
+      lang="fa"
     >
       <div className="canvas" ref={ref}>
         <Reveal
           className="positioned"
-          style={{ top: 81, left: 110, width: 96 }}
+          style={{ top: 96, left: 110, width: 96 }}
           effect="zoom"
           duration={3}
         >
           <img src={asset("location-ornament.webp")} alt="" />
         </Reveal>
         <Reveal
-          className="positioned"
-          style={{ top: 174, left: -30, width: 380 }}
+          className="positioned location-illustration"
           effect="fade"
           duration={1}
         >
           <img
-            src={asset("venue.webp")}
-            alt="Illustration of Islamic Center of Melville"
+            src={asset("venue-aghd-sketch.png")}
+            alt="اسکچ باغ مراسم با سفرهٔ عقد و ردیف صندلی‌های شفاف"
+            width={1683}
+            height={935}
+            loading="lazy"
+            decoding="async"
           />
         </Reveal>
         {petals.map((petal, index) => (
@@ -316,22 +319,23 @@ function Location() {
         ))}
         <Reveal
           className="location-name body-copy positioned"
-          style={{ top: 111, left: 44, width: 232 }}
+          style={{ top: 136, left: 20, width: 280 }}
         >
-          <p>Islamic Center of Melville</p>
+          <p dir="rtl">باغ تالار تهران</p>
         </Reveal>
         <Reveal
           className="location-address body-copy positioned"
-          style={{ top: 149, left: 6, width: 308 }}
+          style={{ top: 200, left: 6, width: 308 }}
         >
-          <p>Address: 118 Old East Neck Road Melville, NY 11747</p>
+          <p dir="rtl">بزرگراه همدانی، چیتگر، بلوار کوهک، نبش نسیم 3</p>
         </Reveal>
         <h2
           id="location-heading"
-          className="script-title positioned"
+          className="script-title location-title positioned"
           style={{ top: 28 }}
+          dir="rtl"
         >
-          Location
+          موقعیت
         </h2>
       </div>
     </section>

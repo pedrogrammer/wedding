@@ -30,7 +30,7 @@ The invitation fonts are stored in `src/assets/fonts/` and loaded locally throug
 
 RSVP responses are saved only in the current browser's local storage (`sacred-garden-rsvp`). The confirmation explicitly states that responses are not sent to the hosts. Connect a receiving endpoint before real guest use.
 
-Sample names, dates, and text match the reference. Its displayed wedding date is September 27, 2026, while its countdown targets December 8, 2026 at 16:00 in the visitor's timezone. This existing discrepancy is preserved for visual fidelity.
+The countdown targets 7 Aban 1405 (October 29, 2026) at 16:00 Iran time, using an explicit UTC+03:30 offset so every visitor counts down to the same instant. Other sample names, dates, and text still match the reference, including the displayed wedding date of September 27, 2026.
 
 ## Reference files
 

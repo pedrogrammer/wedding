@@ -1,8 +1,9 @@
 import { Fragment, useEffect, useRef, useState } from "react";
 import { useReveal } from "../hooks/useReveal";
 
-// Preserve the countdown target used by the published reference.
-const eventDate = new Date(2026, 11, 8, 16, 0, 0).getTime();
+// 7 Aban 1405, 16:00 in Iran. The explicit offset keeps the target
+// independent of the visitor's timezone.
+const eventDate = new Date("2026-10-29T16:00:00+03:30").getTime();
 function timeRemaining() {
   const distance = Math.max(0, eventDate - Date.now());
   return [

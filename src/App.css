@@ -75,9 +75,12 @@
 .timeline-dot { width: 8px; height: 8px; border-radius: 50%; background: #8c7666; }
 .schedule-rose { top: 140px; left: 132px; width: 55px; pointer-events: none; }
 .schedule-rose img { width: 100%; transform: translate3d(0, var(--rose-offset, 0px), 0) rotate(-35deg); will-change: transform; }
-.location-scene { height: 428px; margin-bottom: 30px; }
-.location-name { font-size: 20px; line-height: 31px; }
-.location-address { font-size: 17px; line-height: 21px; }
+.location-scene { height: 480px; margin-bottom: 30px; }
+.location-scene .location-title { font: 400 38px/64px GardenShekasteh, GardenPersian, serif; }
+.location-illustration { top: 248px; left: 50%; width: min(380px, calc(100vw - 24px)); margin-left: calc(min(380px, calc(100vw - 24px)) / -2); mix-blend-mode: multiply; }
+.location-illustration img { mask-image: linear-gradient(to right, transparent, #000 3%, #000 97%, transparent), linear-gradient(to bottom, transparent, #000 5%, #000 94%, transparent); mask-composite: intersect; }
+.location-name { font: 400 34px/48px GardenShekasteh, GardenPersian, serif; }
+.location-address { font: 400 20px/28px 'B Nazanin', GardenPersian, serif; }
 .petal-falling img { animation: var(--petal-animation) var(--petal-duration) linear forwards; }
 @keyframes petal-fall { to { transform: translate(var(--petal-x), var(--petal-y)) rotate(var(--petal-rotate)); opacity: 0; } }
 @keyframes petal-1 { 37.5% { transform: translate(27px, 163px) rotate(-6deg); opacity: 1; } 75% { transform: translate(60px, 341px) rotate(-7deg); opacity: 0.8; } 100% { transform: translate(77px, 381px) rotate(2deg); opacity: 0; } }
