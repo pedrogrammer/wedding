@@ -15,20 +15,17 @@ npm run preview
 
 The application renders semantic React components directly into the page. The venue map uses Neshan's official map iframe; the invitation has no HTML injection, copied page document, or Tilda runtime dependency.
 
-- `src/App.tsx`: hero, schedule, location, guest details, attendance, and footer sections.
+- `src/App.tsx`: hero, schedule, location, map, and footer sections. The closing message preserves the upper floral decoration from the former Dress Code section.
 - `src/components/InvitationIntro.tsx`: envelope state, original opening video, audio playback, and fallback handling.
 - `src/components/Countdown.tsx`: timer, animated digits, and viewport reveal.
 - `src/components/Artwork.tsx`: decorative layers and scroll reveal observers.
 - `src/components/VenueMap.tsx`: live Neshan map of باغ تالار تهران and the supplied Neshan directions link.
-- `src/components/RsvpDialog.tsx`: native dialog, keyboard/focus behavior, form validation, and local response storage.
 - `src/App.css` and `src/index.css`: authored mobile layout, typography, and animations.
 - `public/assets/`: original images and original video/audio. The venue map is embedded from Neshan, with interactive map controls and a link to `https://nshn.ir/57_bvkqu2xdlzK`.
 
 The invitation fonts are stored in `src/assets/fonts/` and loaded locally through `src/index.css`. The Persian welcome section uses Shekasteh for «به نام آفریننده عشق» and Noto Naskh Arabic for the translated invitation text. `Shekasteh-source.md` records the calligraphy font's source and version; the Noto font's Open Font License is included beside its font file. Vite includes the active fonts in the production bundle with hashed filenames. Images, video, and audio load locally; the live venue map requires access to Neshan. `.reference/download-fonts.mjs` records the original six font URLs and can re-download and validate those files when needed. Visual layer coordinates, text, and spacing follow the reference's mobile layout, with the Persian welcome section flowing naturally to fit its text. Screens wider than 479 px display the same centered mobile invitation.
 
-## RSVP and sample data
-
-RSVP responses are saved only in the current browser's local storage (`sacred-garden-rsvp`). The confirmation explicitly states that responses are not sent to the hosts. Connect a receiving endpoint before real guest use.
+## Sample data
 
 The countdown targets 7 Aban 1405 (October 29, 2026) at 16:00 Iran time, using an explicit UTC+03:30 offset so every visitor counts down to the same instant. Other sample names, dates, and text still match the reference, including the displayed wedding date of September 27, 2026.
 

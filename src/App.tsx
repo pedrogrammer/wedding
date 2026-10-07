@@ -1,9 +1,8 @@
-import { useState, type CSSProperties } from "react";
+import { type CSSProperties } from "react";
 import "./App.css";
 import { Artwork, Chevron, Reveal } from "./components/Artwork";
 import { Countdown } from "./components/Countdown";
 import { InvitationIntro } from "./components/InvitationIntro";
-import { RsvpDialog } from "./components/RsvpDialog";
 import { ScheduleRose } from "./components/ScheduleRose";
 import { VenueMap } from "./components/VenueMap";
 import { useReveal } from "./hooks/useReveal";
@@ -366,147 +365,39 @@ function MapSection() {
   );
 }
 
-function GuestDetails() {
+function InvitationFooter() {
   return (
-    <section
-      className="scene guest-details-scene"
-      aria-label="Dress code and gift preference"
-    >
+    <footer className="scene invitation-footer" lang="fa">
       <div className="canvas">
-        <Reveal
-          className="positioned"
-          style={{ top: -183, left: -96, width: 122 }}
-          effect="zoom"
-          duration={2.3}
-        >
-          <img src={asset("dress-rose.webp")} alt="" />
-        </Reveal>
-        <Artwork
-          name="dress-paper.webp"
-          width={744}
-          height={452}
-          left={-212}
-          top={20}
-        />
-        <Reveal
-          className="body-copy positioned"
-          style={{ top: 361, left: 5, width: 310 }}
-        >
-          <p>Kindly, no boxed gifts please.</p>
-        </Reveal>
-        <h2 className="script-title positioned" style={{ top: 284 }}>
-          Gift Preference
-        </h2>
-        <Reveal
-          className="body-copy positioned"
-          style={{ top: 163, left: 10, width: 300 }}
-        >
-          <p>
-            We kindly ask guests to avoid deep red and maroon attire for the
-            celebration.
-          </p>
-        </Reveal>
-        <h2 className="script-title positioned" style={{ top: 86 }}>
-          Dress Code
-        </h2>
-        <Artwork
-          name="dress-top-floral.webp"
-          width={587}
-          left={317}
-          top={-614}
-        />
+        <Artwork name="footer-couple.jpg" width={450} left={-65} top={60} />
+        <div className="footer-gradient positioned" aria-hidden="true" />
         <Artwork
           name="dress-flowers-right.webp"
           width={276}
           left={155}
-          top={-1}
+          top={0}
           motion="sway-dress-right"
         />
-        <Artwork
-          name="dress-flowers-left.webp"
-          width={251}
-          left={-80}
-          top={264}
-          motion="sway-wide"
-        />
-      </div>
-    </section>
-  );
-}
-
-function Attendance({ onOpen }: { onOpen: () => void }) {
-  return (
-    <section
-      className="scene attendance-scene"
-      aria-labelledby="attendance-heading"
-    >
-      <div className="canvas">
         <Reveal
-          className="body-copy positioned"
-          style={{ top: 135, left: -26, width: 372 }}
-        >
-          <p>
-            To help us prepare for a joyful celebration, kindly confirm your
-            attendance.
-          </p>
-        </Reveal>
-        <h2
-          id="attendance-heading"
-          className="script-title positioned"
-          style={{ top: 51 }}
-        >
-          Confirm Your Attendance
-        </h2>
-        <Reveal
-          className="positioned"
-          style={{ top: 210, left: 65, width: 190 }}
-          effect="zoom"
-          duration={1.5}
-          delay={0.5}
-        >
-          <button
-            className="rsvp-seal"
-            onClick={onOpen}
-            aria-label="Confirm your attendance"
-          >
-            <img src={asset("rsvp-seal.webp")} alt="Burgundy wax seal" />
-          </button>
-        </Reveal>
-        <Chevron className="positioned attendance-chevron" />
-        <button className="click-to-open positioned" onClick={onOpen}>
-          Click to open
-        </button>
-      </div>
-    </section>
-  );
-}
-
-function InvitationFooter() {
-  return (
-    <footer className="scene invitation-footer">
-      <div className="canvas">
-        <Artwork name="footer-photo.webp" width={450} left={-65} top={0} />
-        <div className="footer-gradient positioned" aria-hidden="true" />
-        <Reveal
-          className="positioned script-title"
-          style={{ top: 12 }}
+          className="positioned script-title footer-message"
+          style={{ top: 55 }}
           effect="fade"
           duration={1}
         >
-          <p>Hope to see you there!</p>
+          <p dir="rtl">به امید دیدارتان!</p>
         </Reveal>
         <Artwork
           name="footer-flowers.webp"
           width={537}
           left={-108}
-          top={173}
+          top={233}
           motion="sway-subtle"
         />
         <Reveal
           className="footer-names body-copy positioned"
-          style={{ top: 73, left: -20, width: 360 }}
+          style={{ top: 132, left: -20, width: 360 }}
         >
-          <p>Pedram and Asal</p>
+          <p dir="rtl">پدرام و عسل</p>
         </Reveal>
       </div>
     </footer>
@@ -514,7 +405,6 @@ function InvitationFooter() {
 }
 
 function App() {
-  const [rsvpOpen, setRsvpOpen] = useState(false);
   return (
     <>
       <main className="invitation">
@@ -523,12 +413,9 @@ function App() {
         <Schedule />
         <Location />
         <MapSection />
-        <GuestDetails />
-        <Attendance onOpen={() => setRsvpOpen(true)} />
         <InvitationFooter />
       </main>
       <InvitationIntro />
-      {rsvpOpen && <RsvpDialog open onClose={() => setRsvpOpen(false)} />}
     </>
   );
 }
