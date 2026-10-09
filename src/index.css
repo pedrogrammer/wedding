@@ -23,18 +23,6 @@
   font-display: swap;
 }
 @font-face {
-  font-family: GardenSans;
-  src: url('./assets/fonts/SourceSans3-Regular.woff') format('woff');
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: GardenSeal;
-  src: url('./assets/fonts/Cinzel-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
   font-family: GardenShekasteh;
   src: url('./assets/fonts/Shekasteh.ttf') format('truetype');
   font-weight: 400;

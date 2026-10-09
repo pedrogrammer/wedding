@@ -38,9 +38,9 @@ The application renders semantic React components directly into the page. The ve
 - `src/components/InvitationIntro.tsx`: envelope state, original opening video, audio playback, and fallback handling.
 - `src/components/Countdown.tsx`: timer, animated digits, and viewport reveal.
 - `src/components/Artwork.tsx`: decorative layers and scroll reveal observers.
-- `src/components/VenueMap.tsx`: live Neshan map of باغ تالار تهران and the supplied Neshan directions link.
+- `src/components/VenueMap.tsx`: live Neshan map of باغ تالار تهران, with Neshan's built-in button to open the map.
 - `src/App.css` and `src/index.css`: authored mobile layout, typography, and animations.
-- `public/assets/`: original images and original video/audio. The venue map is embedded from Neshan, with interactive map controls and a link to `https://nshn.ir/57_bvkqu2xdlzK`.
+- `public/assets/`: original images and original video/audio. The venue map is embedded from Neshan, with interactive map controls and its built-in button to view the location in Neshan.
 
 The invitation fonts are stored in `src/assets/fonts/` and loaded locally through `src/index.css`. The Persian welcome section uses Shekasteh for «به نام آفریننده عشق» and Noto Naskh Arabic for the translated invitation text. `Shekasteh-source.md` records the calligraphy font's source and version; the Noto font's Open Font License is included beside its font file. Vite includes the active fonts in the production bundle with hashed filenames. Images, video, and audio load locally; the live venue map requires access to Neshan. `.reference/download-fonts.mjs` records the original six font URLs and can re-download and validate those files when needed. Visual layer coordinates, text, and spacing follow the reference's mobile layout, with the Persian welcome section flowing naturally to fit its text. Screens wider than 479 px display the same centered mobile invitation.
 

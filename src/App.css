@@ -29,7 +29,7 @@
 .hero-blessing-line { display: block; white-space: nowrap; }
 .hero-blessing-invitation { font-size: 28px; }
 .hero-welcome { width: min(296px, calc(100vw - 32px)); margin-top: 22px; margin-inline: calc((296px - min(296px, calc(100vw - 32px))) / 2); font: 400 clamp(17px, calc(6.1vw - 2px), 22px)/32px 'B Nazanin', GardenPersian, serif; color: #6a5140; }
-.hero-welcome p { text-align: justify; text-align-last: center; }
+.hero-welcome p { text-wrap: balance; text-align: justify; text-align-last: justify; }
 .scroll-prompt { height: 56px; text-align: center; text-decoration: none; color: #a67d2b; font: 400 32px/35px GardenScript, cursive; }
 .chevron { display: block; width: 25px; height: 16px; color: #937100; }
 .scroll-prompt .chevron { margin: 5px auto 0; animation: chevron-bob 1.1s linear infinite; }
@@ -89,7 +89,6 @@
 .map-frame { opacity: 0.8; }
 .venue-map { position: absolute; z-index: 3; top: 5px; left: -7.5px; width: 335px; height: 335px; border-radius: 15px; overflow: hidden; background: #eff0ef; font-family: Arial, sans-serif; }
 .neshan-map { display: block; width: 100%; height: 100%; border: 0; }
-.open-map { position: absolute; top: 8px; left: 8px; color: #1976d2; background: white; text-decoration: none; padding: 8px 10px; font: 600 14px/1.5 GardenPersian, Arial, sans-serif; border-radius: 3px; box-shadow: 0 1px 4px #0003; }
 .invitation-footer { height: 733px; overflow: hidden; }
 .footer-photo img { mask-image: linear-gradient(to bottom, transparent, #000 237px); }
 /* Hide the three stray marks in the otherwise empty lower-left corner of the floral asset. */
@@ -98,12 +97,15 @@
 .footer-names { font: 400 34px/55px GardenShekasteh, GardenPersian, serif; color: #a67d2b; }
 .envelope, .opening-film { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f9f0e0; }
 .envelope { z-index: 100; width: 100%; height: 100%; border: 0; padding: 0; user-select: none; transition: opacity 1.4s ease; }
-.envelope img, .opening-film video { display: block; width: 100%; max-width: 440px; height: auto; max-height: 100dvh; object-fit: contain; }
+.envelope-artwork { position: relative; display: block; flex: none; width: min(100%, 440px, 56.25dvh); aspect-ratio: 9 / 16; }
+.envelope-artwork img { display: block; width: 100%; height: 100%; }
+.opening-film video { display: block; width: 100%; max-width: 440px; height: auto; max-height: 100dvh; object-fit: contain; }
 .envelope-opening { opacity: 0; pointer-events: none; }
-.envelope-prompt { position: absolute; bottom: 37%; left: 50%; display: flex; flex-direction: column; align-items: center; gap: 5px; transform: translateX(-50%); animation: tap-in 1.2s 0.8s both; }
-.envelope-prompt > span:last-child { font: 400 clamp(20px, 5.3vw, 24px)/1.9 GardenShekasteh, GardenPersian, serif; color: #8c643cbf; white-space: nowrap; animation: tap-pulse 2.4s 1.6s ease-in-out infinite; }
+/* The seal's lower edge is at 54% of the poster; the prompt stays 32px below it. */
+.envelope-prompt { position: absolute; top: calc(54% + 32px); left: 50%; display: flex; flex-direction: column; align-items: center; gap: 5px; transform: translateX(-50%); animation: tap-in 1.2s 0.8s both; }
+.envelope-prompt > span:last-child { font: 400 22px/1.9 GardenShekasteh, GardenPersian, serif; color: #8c643cbf; white-space: nowrap; animation: tap-pulse 2.4s 1.6s ease-in-out infinite; }
 .envelope-chevron { width: 10px; height: 10px; border-right: 1.5px solid #8c643c99; border-top: 1.5px solid #8c643c99; transform: rotate(-45deg); animation: envelope-bob 2.4s 1.9s ease-in-out infinite; }
-@keyframes tap-in { from { opacity: 0; transform: translate(-50%, 6px); } to { opacity: 1; transform: translate(-50%, 0); } }
+@keyframes tap-in { from { opacity: 0; } to { opacity: 1; } }
 @keyframes tap-pulse { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
 @keyframes envelope-bob { 0%, 100% { transform: rotate(-45deg); opacity: 0.6; } 50% { transform: rotate(-45deg) translate(2px, -2px); opacity: 1; } }
 .opening-film { z-index: 101; pointer-events: none; opacity: 0; transition: opacity 0.8s ease; }
