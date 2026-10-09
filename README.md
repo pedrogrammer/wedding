@@ -11,6 +11,25 @@ npm run build
 npm run preview
 ```
 
+## GitHub Pages
+
+The workflow in `.github/workflows/deploy.yml` builds and publishes the invitation on pushes to `master`, or when run manually from the Actions tab.
+
+1. In the GitHub repository, open **Settings → Pages** and set **Source** to **GitHub Actions**.
+2. Commit and push the workflow to `master`.
+3. Wait for **Deploy invitation to GitHub Pages** to finish in **Actions**.
+
+The expected address is https://pedrogrammer.github.io/wedding/. The workflow reads the site's base path from GitHub Pages so assets load under `/wedding/`, and supports a custom domain without changing Vite's local development configuration.
+
+To build and preview this repository path locally:
+
+```sh
+npm run build -- --base /wedding/
+npm run preview -- --base /wedding/
+```
+
+Open http://localhost:4173/wedding/ for this preview. GitHub Free supports Pages for public repositories; publishing from a private repository requires a plan that supports private-repository Pages.
+
 ## Implementation
 
 The application renders semantic React components directly into the page. The venue map uses Neshan's official map iframe; the invitation has no HTML injection, copied page document, or Tilda runtime dependency.
