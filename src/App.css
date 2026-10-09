@@ -98,7 +98,7 @@
 .footer-names { font: 400 34px/55px GardenShekasteh, GardenPersian, serif; color: #a67d2b; }
 .envelope, .opening-film { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f9f0e0; }
 .envelope { z-index: 100; width: 100%; height: 100%; border: 0; padding: 0; user-select: none; transition: opacity 1.4s ease; }
-.envelope img, .opening-film video { display: block; width: 100%; max-width: 440px; height: auto; object-fit: contain; }
+.envelope img, .opening-film video { display: block; width: 100%; max-width: 440px; height: auto; max-height: 100dvh; object-fit: contain; }
 .envelope-opening { opacity: 0; pointer-events: none; }
 .envelope-prompt { position: absolute; bottom: 30%; left: 50%; display: flex; flex-direction: column; align-items: center; gap: 7px; transform: translateX(-50%); animation: tap-in 1.2s 0.8s both; }
 .envelope-prompt > span:last-child { font: 400 11px GardenSeal, Georgia, serif; letter-spacing: 0.26em; text-transform: uppercase; color: #8c643cbf; white-space: nowrap; animation: tap-pulse 2.4s 1.6s ease-in-out infinite; }

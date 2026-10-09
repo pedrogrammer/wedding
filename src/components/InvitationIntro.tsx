@@ -48,16 +48,13 @@ export function InvitationIntro() {
     {stage !== 'open' && <>
       <button className={`envelope ${stage !== 'sealed' ? 'envelope-opening' : ''}`} onClick={open}
         aria-label="Open your invitation" disabled={stage !== 'sealed'}>
-        <img src={asset('envelope.png')} alt="Embossed ivory envelope with a burgundy R & Z wax seal" />
+        <img src={asset('opening-poster.png')} alt="First frame of your invitation opening video" />
         <span className="envelope-prompt"><span className="envelope-chevron" /><span>Tap to open</span></span>
       </button>
       <div className={`opening-film ${stage === 'playing' ? 'film-playing' : ''} ${stage === 'fading' ? 'film-fading' : ''}`}
         aria-hidden="true">
-        <video ref={videoRef} src={asset('opening.mp4')} muted playsInline preload="auto" onEnded={finish} onError={finish}
-          onTimeUpdate={() => {
-            const video = videoRef.current
-            if (video?.duration && video.currentTime >= video.duration - 0.8) finish()
-          }} />
+        <video ref={videoRef} src={asset('opening.mp4')} poster={asset('opening-poster.png')}
+          muted playsInline preload="auto" onEnded={finish} onError={finish} />
       </div>
     </>}
     {(stage === 'fading' || stage === 'open') && <MusicButton playing={playing} onToggle={toggleMusic} />}
