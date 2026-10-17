@@ -42,16 +42,17 @@
   font-display: swap;
 }
 :root {
+  color-scheme: only light;
   font-family: GardenSerif, Georgia, serif;
   color: #6c513f;
-  background: #f9f0e0;
+  background-color: #f9f0e0;
   font-synthesis: none;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; overflow-x: clip; }
+html { scroll-behavior: smooth; background-color: #f9f0e0; }
+body { margin: 0; overflow-x: clip; background-color: #f9f0e0; }
 h1, h2, p, ol { margin: 0; padding: 0; }
 button, input { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
