@@ -156,9 +156,20 @@ const events = [
 ];
 
 function Schedule() {
+  const withoutAryai =
+    new URLSearchParams(window.location.search).get("withoutAryai") === "1";
+  const scheduleEvents = withoutAryai
+    ? events.slice(1).map((event) => ({
+        ...event,
+        timeTop: event.timeTop - 105,
+        nameTop: event.nameTop - 105,
+        dotTop: event.dotTop - 105,
+      }))
+    : events;
+
   return (
     <section
-      className="scene schedule-scene"
+      className={`scene schedule-scene ${withoutAryai ? "schedule-without-aryai" : ""}`}
       aria-labelledby="schedule-heading"
       lang="fa"
     >
@@ -173,9 +184,10 @@ function Schedule() {
         <Artwork
           name="schedule-paper-bottom.webp"
           width={744}
-          height={259}
+          height={withoutAryai ? 154 : 259}
           left={-212}
           top={321}
+          className="schedule-paper-bottom"
         />
         <h2
           id="schedule-heading"
@@ -186,14 +198,14 @@ function Schedule() {
           برنامهٔ مراسم
         </h2>
         <ol className="event-list">
-          {events.map((event, index) => (
+          {scheduleEvents.map((event, index) => (
             <li key={event.time}>
               <Reveal
                 className="event-time positioned"
                 style={{
                   top: event.timeTop,
-                  left: index < 3 ? 4 : 1,
-                  width: index < 3 ? 129 : 136,
+                  left: event.time === "9 PM" ? 1 : 4,
+                  width: event.time === "9 PM" ? 136 : 129,
                 }}
                 effect="fade"
                 duration={1.5}
@@ -219,7 +231,12 @@ function Schedule() {
         </ol>
         <svg
           className="timeline-line positioned"
-          style={{ top: 160, left: 158, width: 2, height: 321.425 }}
+          style={{
+            top: 160,
+            left: 158,
+            width: 2,
+            height: withoutAryai ? 216.425 : 321.425,
+          }}
           viewBox="0 0 2 323"
           aria-hidden="true"
         >
@@ -231,14 +248,20 @@ function Schedule() {
             strokeLinecap="round"
           />
         </svg>
-        {events.map((event) => (
+        {scheduleEvents.map((event) => (
           <span
             key={event.time}
             className="timeline-dot positioned"
             style={{ top: event.dotTop, left: 155 }}
           />
         ))}
-        <ScheduleRose />
+        <ScheduleRose
+          endOffset={
+            withoutAryai
+              ? scheduleEvents[scheduleEvents.length - 1].dotTop - 167.5
+              : 309
+          }
+        />
         <Reveal
           className="heading-ornament positioned"
           style={{ top: 56, left: 277, width: 78 }}

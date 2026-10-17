@@ -4,7 +4,7 @@ import { asset } from '../lib/assets'
 // The reference moves between these positions over four 100px scroll intervals.
 const positions = [0, 80, 169, 247, 309]
 
-export function ScheduleRose() {
+export function ScheduleRose({ endOffset = 309 }: { endOffset?: number }) {
   const anchor = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -19,7 +19,8 @@ export function ScheduleRose() {
       const distance = Math.max(0, Math.min(400, window.innerHeight / 2 - node.getBoundingClientRect().top))
       const segment = Math.min(3, Math.floor(distance / 100))
       const progress = (distance - segment * 100) / 100
-      const y = positions[segment] + (positions[segment + 1] - positions[segment]) * progress
+      const scale = endOffset / positions[positions.length - 1]
+      const y = (positions[segment] + (positions[segment + 1] - positions[segment]) * progress) * scale
       node.style.setProperty('--rose-offset', `${y}px`)
     }
     const schedule = () => {
@@ -34,7 +35,7 @@ export function ScheduleRose() {
       window.removeEventListener('resize', schedule)
       cancelAnimationFrame(frame)
     }
-  }, [])
+  }, [endOffset])
 
   return <div ref={anchor} className="schedule-rose positioned" aria-hidden="true">
     <img src={asset('rose.webp')} alt="" draggable={false} />
