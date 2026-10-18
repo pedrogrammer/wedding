@@ -161,6 +161,7 @@ function Schedule() {
   const scheduleEvents = withoutAryai
     ? events.slice(1).map((event) => ({
         ...event,
+        time: event.time === "5 PM" ? "6 PM" : event.time === "6 PM" ? "7 PM" : event.time,
         timeTop: event.timeTop - 105,
         nameTop: event.nameTop - 105,
         dotTop: event.dotTop - 105,
@@ -388,11 +389,20 @@ function MapSection() {
   );
 }
 
-function InvitationFooter() {
+function InvitationFooter({ useDollPhoto = false }: { useDollPhoto?: boolean }) {
   return (
-    <footer className="scene invitation-footer" lang="fa">
+    <footer
+      className={`scene invitation-footer ${useDollPhoto ? "invitation-footer-dolls" : ""}`}
+      lang="fa"
+    >
       <div className="canvas">
-        <Artwork name="footer-couple.jpg" className="footer-photo" width={450} left={-65} top={60} />
+        <Artwork
+          name={useDollPhoto ? "crochet-couple.png" : "footer-couple.jpg"}
+          className="footer-photo"
+          width={450}
+          left={-65}
+          top={useDollPhoto ? 120 : 60}
+        />
         <Artwork
           name="dress-flowers-right.webp"
           className="footer-top-flowers"
@@ -413,7 +423,7 @@ function InvitationFooter() {
           name="footer-flowers.webp"
           width={537}
           left={-108}
-          top={233}
+          top={useDollPhoto ? 295 : 233}
           motion="sway-subtle"
         />
         <Reveal
@@ -428,6 +438,9 @@ function InvitationFooter() {
 }
 
 function App() {
+  const useDollPhoto =
+    new URLSearchParams(window.location.search).get("dolls") === "1";
+
   return (
     <>
       <main className="invitation">
@@ -436,7 +449,7 @@ function App() {
         <Schedule />
         <Location />
         <MapSection />
-        <InvitationFooter />
+        <InvitationFooter useDollPhoto={useDollPhoto} />
       </main>
       <InvitationIntro />
     </>
