@@ -127,7 +127,7 @@ const events = [
     width: 128,
   },
   {
-    time: "5 PM",
+    time: "6 PM",
     name: "پذیرایی",
     timeTop: 246,
     nameTop: 250,
@@ -136,7 +136,7 @@ const events = [
     width: 128,
   },
   {
-    time: "6 PM",
+    time: "7 PM",
     name: "رقص",
     timeTop: 350,
     nameTop: 354,
@@ -161,7 +161,6 @@ function Schedule() {
   const scheduleEvents = withoutAryai
     ? events.slice(1).map((event) => ({
         ...event,
-        time: event.time === "5 PM" ? "6 PM" : event.time === "6 PM" ? "7 PM" : event.time,
         timeTop: event.timeTop - 105,
         nameTop: event.nameTop - 105,
         dotTop: event.dotTop - 105,
